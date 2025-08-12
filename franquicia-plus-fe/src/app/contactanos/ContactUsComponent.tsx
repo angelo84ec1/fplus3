@@ -194,9 +194,75 @@ const ContactUsComponent = () => {
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
   const [message, setMessage] = useState("");
+  const [isPhoneValid, setIsPhoneValid] = useState(true);
+  const [phoneError, setPhoneError] = useState("");
+
+  // Phone validation function - now returns validation message
+  const validatePhone = (phoneNumber: string): { isValid: boolean; message: string } => {
+    // Remove any spaces or formatting
+    const cleanPhone = phoneNumber.replace(/\s/g, '');
+    
+    // Empty is considered valid for styling during input
+    if (!phoneNumber) {
+      return { isValid: true, message: "" };
+    }
+
+    // Check if number starts with '593' or '0'
+    if (cleanPhone.startsWith('593') || cleanPhone.startsWith('0')) {
+      return { 
+        isValid: false, 
+        message: "El número no debe empezar con '593' ni con '0'" 
+      };
+    }
+    
+    // Check if it's exactly 9 digits and only contains numbers
+    const phoneRegex = /^\d{9}$/;
+    const isValid = phoneRegex.test(cleanPhone);
+    
+    if (!isValid) {
+      if (cleanPhone.length < 9) {
+        return { 
+          isValid: false, 
+          message: "El número debe tener 9 dígitos" 
+        };
+      }
+      return { 
+        isValid: false, 
+        message: "El número solo debe contener dígitos" 
+      };
+    }
+    
+    return { isValid: true, message: "" };
+  };
+
+  // Format phone input to only allow numbers and enforce 9-digit limit
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Remove any non-numeric characters
+    const numbersOnly = value.replace(/\D/g, '');
+    // Remove '593' or '0' from the start if present
+    const cleanNumber = numbersOnly.replace(/^(593|0)/, '');
+    // Limit to 9 digits
+    const limitedNumbers = cleanNumber.slice(0, 9);
+    setPhone(limitedNumbers);
+    
+    // Update validation state without showing toast
+    const validation = validatePhone(limitedNumbers);
+    setIsPhoneValid(validation.isValid);
+    setPhoneError(validation.message);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate phone number on submit
+    const phoneValidation = validatePhone(phone);
+    if (!phoneValidation.isValid) {
+      toast.error(phoneValidation.message);
+      setIsPhoneValid(false);
+      return;
+    }
+
     if (
       names !== "" &&
       surnames !== "" &&
@@ -501,15 +567,22 @@ const ContactUsComponent = () => {
                     placeholder="Correo"
                     className="py-3 pl-2 rounded-lg lg:w-44"
                   />
-                  <input
-                    required
-                    defaultValue=""
-                    value={phone}
-                    onChange={(e: any) => setPhone(e.target.value)}
-                    type="text"
-                    placeholder="WhatsApp"
-                    className="py-3 pl-2 rounded-lg lg:w-44"
-                  />
+                  <div className="relative">
+                    <input
+                      required
+                      defaultValue=""
+                      value={phone}
+                      onChange={handlePhoneChange}
+                      type="text"
+                      placeholder="WhatsApp"
+                      className={`py-3 pl-2 rounded-lg lg:w-44 ${!isPhoneValid ? 'border-2 border-red-500' : ''}`}
+                    />
+                    {phoneError && (
+                      <span className="absolute left-0 -bottom-5 text-xs text-red-500">
+                        {phoneError}
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <div className="flex justify-start">
                   <select

@@ -6,14 +6,12 @@ import { TbWorld } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import logoSimple from "@/assets/img-franquicias/Group -71.png";
-import plusSymbols from "@/assets/img-franquicias/Group -34.png";
-import timesSymbols from "@/assets/img-franquicias/Group -36.png";
 import {
   FaInstagram,
   FaFacebookF,
   FaLinkedin,
   FaYoutube,
-  FaTiktok,
+
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -168,59 +166,22 @@ const Navbar = () => {
               />
             </a>
           </div>
-          <div className="absolute pointer-events-none top-0 bottom-0 lg:flex hidden justify-center items-center w-auto left-[29vw]">
-            <div className="h-[46vh]">
-              <Image
-                unoptimized
-                src={plusSymbols}
-                alt={""}
-                className="images"
-              />
-            </div>
-          </div>
-          <div className="absolute pointer-events-none right-0 left-0 flex lg:hidden justify-center items-center w-auto top-[15%]">
-            <div className="rotate-90 h-[30vh]">
-              <Image
-                unoptimized
-                src={plusSymbols}
-                alt={""}
-                className="images"
-              />
-            </div>
-          </div>
-          <div className="absolute pointer-events-none top-0 bottom-0 flex justify-center items-center w-auto right-[30vw]">
-            <div className="h-[35vh] lg:block hidden">
-              <Image
-                unoptimized
-                src={timesSymbols}
-                alt={""}
-                className="images"
-              />
-            </div>
-          </div>
-          <div className="absolute pointer-events-none right-0 left-0 flex lg:hidden justify-center items-center w-auto top-[50%]">
-            <div className="rotate-90 h-[20vh]">
-              <Image
-                unoptimized
-                src={timesSymbols}
-                alt={""}
-                className="images"
-              />
-            </div>
-          </div>
+
+         
           <div className="lg:w-1/3 h-[30%] lg:h-full bg-[#02C5D5] top-0 bottom-0 flex flex-col justify-center">
             <div className="w-auto ml-[7vw] flex flex-col gap-y-6">
+            
               <div
                 className="cursor-pointer text-white text-xl lg:text-4xl"
                 onClick={() => redirect("/somos-franquicia-plus-consultora")}
               >
-                Acerca de F+
+                Sobre Fplus
               </div>
               <div
                 className="cursor-pointer text-white text-xl lg:text-4xl"
-                onClick={() => redirect("/contactanos")}
+                onClick={() => redirect("/")}
               >
-                Escríbenos
+                Servicios
               </div>
               <div
                 className="cursor-pointer text-white text-xl lg:text-4xl"
@@ -228,33 +189,27 @@ const Navbar = () => {
               >
                 Testimonios
               </div>
-              <div
+            </div>
+          </div>
+          <div className="lg:w-1/3 h-[30%] lg:h-full bg-[#0D132F] top-0 bottom-0 flex flex-col justify-center">
+            <div className="w-[80%] ml-[4.5vw] flex flex-col gap-y-8">
+            <div
                 className="cursor-pointer text-white text-xl lg:text-4xl"
                 onClick={() => redirect("/blog")}
               >
                 Blogs y Noticias
               </div>
-            </div>
-          </div>
-          <div className="lg:w-1/3 h-[30%] lg:h-full bg-[#0D132F] top-0 bottom-0 flex flex-col justify-center">
-            <div className="w-[80%] ml-[4.5vw] flex flex-col gap-y-8">
-              <div
+          <div
                 className="cursor-pointer text-white text-xl lg:text-4xl"
-                onClick={() => redirect("/consultores-de-franquicias")}
+                onClick={() => redirect("/contactanos")}
               >
-                Franquicia tu negocio
+                Escríbenos
               </div>
               <div
                 className="cursor-pointer text-white text-xl lg:text-4xl"
-                onClick={() => redirect("/certificado-de-franquicias/")}
+                onClick={() => redirect("/politica-de-privacidad")}
               >
-                Certifícate en F+
-              </div>
-              <div
-                className="cursor-pointer text-white text-xl lg:text-4xl"
-                onClick={() => redirect("/franquicias-en-ecuador/")}
-              >
-                Buscar Franquicias
+                Política de Privacidad
               </div>
             </div>
           </div>
@@ -284,13 +239,13 @@ const Navbar = () => {
               <div className="flex text-2xl gap-2">
                 <a
                   className="text-white p-2 rounded-full bg-[#0D132F]"
-                  href="https://www.instagram.com/franquicia_plus/"
+                  href="https://www.instagram.com/fplusecuador"
                 >
                   <FaInstagram />
                 </a>
                 <a
                   className="text-white p-2 rounded-full bg-[#0D132F]"
-                  href="https://www.facebook.com/franquiciaplus/"
+                  href="https://www.facebook.com/fplusecuador"
                 >
                   <FaFacebookF />
                 </a>
@@ -303,16 +258,11 @@ const Navbar = () => {
                 </a>
                 <a
                   className="text-white p-2 rounded-full bg-[#0D132F]"
-                  href="https://www.youtube.com/@franquiciaplus-franquicias3846"
+                  href="https://www.youtube.com/@FPlus2006"
                 >
                   <FaYoutube />
                 </a>
-                <a
-                  className="text-white p-2 rounded-full bg-[#0D132F]"
-                  href="https://www.youtube.com/@franquiciaplus-franquicias3846"
-                >
-                  <FaTiktok />
-                </a>
+          
               </div>
             </div>
           </div>

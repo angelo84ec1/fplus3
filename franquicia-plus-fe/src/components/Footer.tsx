@@ -80,37 +80,30 @@ const Footer = () => {
             <div className="flex text-4xl gap-2">
               <a
                 className="text-white"
-                href="https://www.instagram.com/franquicia_plus/"
+                href="https://www.instagram.com/fplusecuador"
               >
                 <FaInstagram />
               </a>
               <a
                 className="text-white"
-                href="https://www.facebook.com/franquiciaplus/"
+                href="https://www.facebook.com/fplusecuador"
               >
                 <FaFacebook />
               </a>
               <a
                 className="text-white"
-                href="https://www.linkedin.com/company/franquicia-plus/"
+                href="https://www.linkedin.com/company/78687961"
               >
                 <FaLinkedin />
               </a>
               <a
                 className="text-white"
-                href="https://www.youtube.com/@franquiciaplus-franquicias3846"
+                href="https://www.youtube.com/@FPlus2006"
               >
                 <FaYoutube />
               </a>
 
-              <a
-                onClick={() => {
-                  setShowInfo(true);
-                }}
-                className="hidden lg:block cursor-pointer border border-transparent rounded overflow-hidden hover:border-[#fa5e4d]"
-              >
-                <BsInfo className="text-[#02c5d5] hover:text-[#fa5e4d] bg-white" />
-              </a>
+         
               
           
             </div>
@@ -141,7 +134,7 @@ const Footer = () => {
                 className="text-white cursor-pointer text-base hover:text-[#fa5e4d]"
                 onClick={() => redirect("/somos-franquicia-plus-consultora/")}
               >
-                Sobre Franquicia Plus
+                Sobre FPlus
               </div>
              
               <div
@@ -178,7 +171,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex justify-center items-center text-black w-full bg-[#fa5e4d] text-xs py-1">
-          Copyright © 2024
+          Copyright © 2025
         </div>
       </div>
 
