@@ -1,0 +1,113 @@
+{
+    "url": "franquicias-en-ecuador-2022",
+    "title": "Franquicias en Ecuador 2022",
+    "category": "Business",
+    "imageBanner": "https://franquiciaplus.com/Content/img/BlogPost/Post1/internoblog1.png",
+    "seo": {
+        "title": "Franquicias en Ecuador 2022",
+        "description": "Franquicias en Ecuador 2022 conoce sobre negocios rentables",
+        "imageSocial": "https://franquiciaplus.com/Content/img/BlogPost/Post1/internoblog1.png",
+        "linkedin": true,
+        "instagram": true,
+        "facebook": true
+    },
+    "body": [
+        {
+            "type": "texto-normal20",
+            "content": "A la gente le gusta comprar en tiendas y empresas que realmente se conectan con su estilo de vida. Por ello, las franquicias en Ecuador son un modelo de negocio muy atractivo, ya que, en la mayoría de los casos, las empresas de franquicias forman parte del día a día de las familias.",
+            "color": "#000"
+        },
+        {
+            "type": "titulo20",
+            "content": "Las franquicias una opción de negocio rentable",
+            "color": "#02C7D7"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Los períodos de crisis suelen ser prometedores para el mercado de las franquicias. Las personas que pierden su trabajo a menudo recurren a las franquicias como una alternativa para tener su propio negocio. De esta forma no tienen que lidiar con las dificultades de una empresa propia en las primeras etapas.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "De hecho, abrir una franquicia en Quito, representa menos riesgo que aventurarse solo para abrir una tienda. Con el apoyo de una empresa ya establecida en el mercado, que cuenta con una cartera de clientes y procesos definidos, además de una marca fuerte, emprender es más sencillo.",
+            "color": "#000"
+        },
+        {
+            "type": "titulo20",
+            "content": "El negocio de las franquicias en Ecuador en el 2022",
+            "color": "#02C7D7"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "La franquicia siempre ha tenido fama de ser un refugio seguro al iniciar un negocio, ya que es una marca generalmente establecida. Y eso no ha cambiado para el 2022.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Las franquicias en Ecuador desarrollan servicios y modelos de negocio de acuerdo a las demandas del mercado. Las franquicias rentables son aquellas que, además de mostrar una buena rentabilidad, cuentan con estrategias para cumplir con los requerimientos del mercado.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "La pandemia requirió que muchas cadenas de franquicias se adaptaran a los cambios de comportamiento y consumo de los ecuatorianos. Gracias a que se adaptaron, las franquicias en Ecuador se han ido recuperando durante el 2021 y para el 2022 se espera un crecimiento sostenido de este rubro",
+            "color": "#000"
+        },
+        {
+            "type": "titulo20",
+            "content": "Ventajas de abrir una franquicia en la postpandemia",
+            "color": "#02C7D7"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Es innegable que el mercado de franquicias se ha mostrado resiliente al apostar por la adaptación como clave de un escenario de recuperación.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Abrir una franquicia e incursionar en el emprendimiento es lo que mueve a las personas que buscan tener su propio negocio.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Durante el período de la pandemia, en el que muchas personas perdieron su trabajo o quedaron insatisfechas con su trabajo actual, este modelo de negocio resultó ser muy atractivo, ya que ofrece estas ventajas:",
+            "color": "#000"
+
+        },
+        {   "type":"lista",
+            "content":
+            [
+                {
+                    "type": "titulo-lista20",
+                    "content": "Te permite emprender con seguridad:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Trabajar con una marca que ya es reconocida en el mercado te ofrece beneficios como emprendedor. Y uno de ellos, sin duda, es la seguridad empresarial. Si ingresas al mercado con el modelo de franquicia ya cuentas con una red de productos y servicios validados por los consumidores. Esto garantiza mayor rentabilidad en tus inicios y un negocio de éxito a largo plazo.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "Tienes un plan de negocios exitoso",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Al momento de crear una empresa es necesario contar con un plan elaborado, seguro y eficiente, que prevea una serie de factores que pueden afectar a la empresa. Los franquiciadores venden sus franquicias precisamente porque cuentan con un plan de negocios probado y aprobado, lo que te da más posibilidades de éxito.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "Cuentas con el apoyo del franquiciante:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Al adquirir una franquicia, el franquiciante te apoya para implementar y operar el negocio, desde la asistencia en la elección del punto comercial, apertura de la cuenta legal, capacitación en el mercado hasta el lanzamiento de la unidad.",
+                    "color": "#000"
+                }
+            ]
+        }
+        
+    ]
+}

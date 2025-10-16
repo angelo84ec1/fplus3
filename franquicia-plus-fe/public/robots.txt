@@ -1,0 +1,19 @@
+robots.txt:
+User-Agent: *
+Sitemap: https://fplusglobal.com/sitemap.xml
+
+# Para Google
+User-agent: Googlebot
+Allow: /
+
+# Para Bing  
+User-agent: Bingbot
+Allow: /
+
+# Para Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Para Twitter
+User-agent: Twitterbot
+Allow: /
