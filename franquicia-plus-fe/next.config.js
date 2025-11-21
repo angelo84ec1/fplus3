@@ -33,9 +33,9 @@ module.exports = {
     
     // Dominios actualizados (removido S3, añadido tu dominio)
     domains: [
-      "franquiciaplus.com",
-      "www.franquiciaplus.com",
-      "desarrollo.franquiciaplus.com"
+      "fplusglobal.com",
+      "www.fplusglobal.com",
+      "desarrollo.fplusglobal.com"
     ],
     
     // Configuración adicional para optimización
@@ -48,19 +48,19 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'franquiciaplus.com',
+        hostname: 'fplusglobal.com',
         port: '',
         pathname: '/media/**',
       },
       {
         protocol: 'https', 
-        hostname: 'www.franquiciaplus.com',
+        hostname: 'www.fplusglobal.com',
         port: '',
         pathname: '/media/**',
       },
       {
         protocol: 'https',
-        hostname: 'desarrollo.franquiciaplus.com',
+        hostname: 'desarrollo.fplusglobal.com',
         port: '',
         pathname: '/media/**',
       }

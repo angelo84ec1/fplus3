@@ -1,75 +1,192 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import pc1 from "../../assets/img-franquicias/img_video_testimonios.png";
 
 // Lista de testimonios con videos de Amazon S3
 const testimonials = [
   {
     id: 1,
-    img: pc1,
+    title: "Nitro Paradice",
+    description: "Una experiencia única de emprendimiento exitoso",
     videoUrl:
-      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Mochi+Helado+Artesanal+formato+Historia+(SUBIR+PLATAFORMA).mp4",
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+NitroParadice+(Reemplazar+por+el+Antiguo).mp4",
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     id: 2,
-    img: pc1,
+    title: "BlackPhone",
+    description: "Innovación y éxito en el sector tecnológico",
     videoUrl:
-      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Nitro+Paradice+(SUBIR+PLATAFORMA).mp4",
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+BlackPhone+(1).mp4",
+    gradient: "from-gray-700 to-gray-900",
+  },
+  {
+    id: 3,
+    title: "Little Italy",
+    description: "Sabor auténtico italiano en cada bocado",
+    videoUrl:
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Little+Italy.mp4",
+    gradient: "from-green-500 to-emerald-600",
   },
 ];
 
-export default function Testimonials() {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+export default function TestimonialsPhone() {
+  const [selectedVideo, setSelectedVideo] = useState<{
+    url: string;
+    title: string;
+  } | null>(null);
 
   return (
-    <div className="flex flex-col items-center p-6">
-      {/* Título con color #232c4d */}
-      <h2 className="text-4xl font-bold mb-6" style={{ color: "#010c43" }}>
-        TESTIMONIOS
-      </h2>
+    <div className="flex flex-col items-center px-4 py-12 bg-gradient-to-b from-gray-50 to-white">
+      {/* Título optimizado para móvil */}
+      <div className="text-center mb-8">
+        <h2
+          className="text-3xl font-bold mb-3 tracking-tight"
+          style={{ color: "#010c43" }}
+        >
+          TESTIMONIOS
+        </h2>
+        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        <p className="mt-3 text-gray-600 text-sm px-4">
+          Historias de éxito de nuestros franquiciados
+        </p>
+      </div>
 
-      {/* Contenedor de las imágenes en dos columnas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Contenedor de los videos en columna para móvil */}
+      <div className="flex flex-col gap-6 w-full max-w-md">
         {testimonials.map((item) => (
           <div
             key={item.id}
-            className="cursor-pointer transition-transform transform hover:scale-105"
-            onClick={() => setSelectedVideo(item.videoUrl)}
+            className="group relative cursor-pointer active:scale-95 transition-transform duration-200"
+            onClick={() =>
+              setSelectedVideo({ url: item.videoUrl, title: item.title })
+            }
           >
-            <Image
-              src={item.img}
-              alt={`Testimonio ${item.id}`}
-              width={300}
-              height={200}
-              className="rounded-lg shadow-lg"
-            />
+            {/* Card optimizada para móvil */}
+            <div className="relative overflow-hidden rounded-xl shadow-lg">
+              {/* Thumbnail con gradiente */}
+              <div
+                className={`relative h-48 bg-gradient-to-br ${item.gradient} flex items-center justify-center`}
+              >
+                {/* Overlay oscuro */}
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                
+                {/* Play button */}
+                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-white bg-opacity-95 shadow-lg">
+                  <svg
+                    className="w-8 h-8 text-gray-800 ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+
+              </div>
+
+              {/* Información del testimonio */}
+              <div className="bg-white p-4">
+                <h3 className="text-xl font-bold mb-1 text-gray-800">
+                  {item.title}
+                </h3>
+                {item.description && (
+                  <p className="text-gray-600 text-xs leading-relaxed">
+                    {item.description}
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Modal de video (centrado y encima de todo) */}
+      {/* Modal de video optimizado para móvil */}
       {selectedVideo && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-          <div className="relative bg-white p-4 rounded-lg max-w-2xl w-full">
-            <button
-              className="absolute top-2 right-2 text-xl font-bold"
-              onClick={() => setSelectedVideo(null)}
-            >
-              ✖
-            </button>
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50 p-3 animate-fadeIn"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative bg-gray-900 rounded-xl w-full max-w-lg shadow-2xl animate-slideUp"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header del modal compacto */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <h3 className="text-lg font-bold text-white truncate pr-2">
+                {selectedVideo.title}
+              </h3>
+              <button
+                className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full bg-red-500 active:bg-red-600 text-white transition-colors"
+                onClick={() => setSelectedVideo(null)}
+                aria-label="Cerrar video"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
 
-            {/* Reproductor de video para Amazon S3 */}
-            <video
-              className="w-full aspect-video rounded-lg"
-              src={selectedVideo}
-              controls
-              autoPlay
-            />
+            {/* Reproductor de video */}
+            <div className="p-3">
+              <video
+                className="w-full aspect-video rounded-lg shadow-lg"
+                src={selectedVideo.url}
+                controls
+                autoPlay
+                playsInline
+                controlsList="nodownload"
+                preload="metadata"
+              />
+            </div>
+
+            {/* Instrucción para cerrar */}
+            <div className="p-3 text-center">
+              <p className="text-xs text-gray-400">
+                Toca fuera del video para cerrar
+              </p>
+            </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.2s ease-out;
+        }
+        
+        .animate-slideUp {
+          animation: slideUp 0.3s ease-out;
+        }
+      `}</style>
     </div>
   );
 }
-

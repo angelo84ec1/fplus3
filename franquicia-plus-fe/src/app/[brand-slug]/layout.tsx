@@ -11,7 +11,7 @@ const PageLayout = async (props: any) => {
   return (
     <div>
       <head>
-        <title>{"FranquiciaPlus | " + DetalleMarca.nombre}</title>
+        <title>{"FPlus | " + DetalleMarca.nombre}</title>
         <meta name="description" content={DetalleMarca.description_html} />
         <meta
           name="canonical"

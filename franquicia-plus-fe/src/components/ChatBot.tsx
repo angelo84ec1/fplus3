@@ -5,7 +5,7 @@ const Chat = () => {
   // Función para redirigir a WhatsApp
   const handleWhatsAppClick = () => {
     const phoneNumber = "593999209555"; // Número de WhatsApp
-    const message = "Hola, me interesa más información."; // Mensaje opcional
+    const message = "Hola, estoy interesado en franquiciar mi negocio"; // Mensaje opcional
     const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(
       message
     )}&app_absent=0`;

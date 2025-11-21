@@ -176,7 +176,20 @@ const Marca = ({ marca }: props) => {
               <div className="d-flex justify-content-end">
               <button
   type="button"
-  className="text-base font-semibold text-white bg-[#00c6d5] px-6 py-3 rounded-lg shadow-lg hover:bg-[#00b5c4] hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out border-0"
+  className="text-base font-semibold text-white bg-[#00c6d5] px-3 py-2 rounded-lg 
+  shadow-[0_8px_16px_rgba(0,198,213,0.4),0_4px_8px_rgba(0,0,0,0.2)] 
+  hover:px-4
+  hover:py-3
+  hover:shadow-[0_12px_24px_rgba(0,198,213,0.5),0_6px_12px_rgba(0,0,0,0.3)] 
+  hover:bg-[#00b5c4] 
+  hover:scale-110
+  hover:-translate-y-2
+  active:px-5
+  active:py-4
+  active:scale-115
+  active:translate-y-0
+  active:shadow-[0_4px_8px_rgba(0,198,213,0.3),0_2px_4px_rgba(0,0,0,0.2)]
+  transition-all duration-300 ease-in-out border-0"
 >
   Consultar
 </button>

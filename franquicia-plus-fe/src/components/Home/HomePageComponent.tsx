@@ -123,157 +123,161 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
           <Navbar />
         </section>
         <BannerHome onChangeTipo={onChangeTipo} />
-        {loading? (
+        {loading ? (
           <section>
-          <div className="bg-[#0d132f] h-20 z-[1] relative" />
-          <div className="h-full min-h-[60vh] w-full flex justify-center items-center">
-            <div
-              style={{ fontFamily: "Mukata Mahee Bold" }}
-              className="text-[#fa5e4d] text-9xl animate-spin"
-            >
-              <CgSpinnerTwoAlt />
-            </div>
-          </div>
-        </section>
-        ):(
-        <section className="lg:pt-5 flex justify-center w-full relative">
-          <div className="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] w-full">
-            <div className="flex flex-wrap mb-6">
-              <div className="col-md-8 offset-md-2 text-center">
-                <p
-                  className="text-5xl"
-                  data-aos="fade-down"
-                  data-aos-delay="100"
-                  style={{
-                    fontFamily: "Mukata Mahee Extra Bold",
-                  }}
-                >
-                  Encuentra tu Negocio
-                </p>
-                <div className="w-full flex justify-center">
-                  <p
-                    className="text-base lg:text-lg lg:w-full"
-                    data-aos="fade-down"
-                    data-aos-delay="300"
-                    style={{
-                      color: "#9f9c9d",
-                      fontFamily: "Mukata Mahee Regular",
-                      lineHeight: "1.875em",
-                      width: "70%",
-                    }}
-                  >
-                    Invierte en una empresa de éxito y se parte de un equipo
-                    ganador
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full flex justify-center">
-              <div className="w-[90%] lg:w-full">
-                <div className="border-b">
-                  <ul className="flex justify-center gap-2">
-                    {categories.map((category) => (
-                      <li
-                        onChange={() => handleCategoryChange(category.value)}
-                        key={category.id}
-                        className={`${
-                          selectedCategory === category.value
-                            ? "text-[#CC4B3D]"
-                            : "text-[#0d132f]"
-                        } opcion flex  hover:text-[#CC4B3D]`}
-                      >
-                        <label
-                          className="border-0 text-xs lg:text-base lg:px-10 px-0 gap-1 flex justify-center items-center"
-                          htmlFor={category.id}
-                        >
-                          <FontAwesomeIcon icon={category.icon} />
-                          {category.value}
-                        </label>
-                        <input
-                          id={category.id}
-                          type="radio"
-                          name="categories"
-                          value={category.value}
-                          className="categoriesHome"
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap mt-5 mb-5 w-full">
-                  {popularBrands.results.map((marca, index) => {
-                    if (
-                      selectedCategory === "Todo" ||
-                      selectedCategory === marca.categoria.nombre
-                    ) {
-                      return <MarcaCard marca={marca} key={index} />;
-                    }
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        )}
-   <section className="h-[15em] sm:h-[20em] md:h-[35.2em] flex items-center bg-[#FFFFFF] w-full">
-  <a
-    href="https://experiencia.escala.com/escala-franquiciaplus"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-full"
-  >
-    <div className="flex justify-center items-center w-full overflow-hidden">
-      <video
-        className="w-full max-w-[90%] sm:max-w-full h-auto max-h-[35.2em] object-contain aspect-video mx-auto"
-        loop
-        autoPlay
-        preload="auto"
-        muted
-        playsInline
-      >
-        <source type="video/mp4" src="/video.mp4" />
-      </video>
-    </div>
-  </a>
-</section>
-
-
-        <section className="-mt-29 z-[0] text-white pb-10 flex justify-center gradientHomeBg h-full w-full">
-          <div className="sm:max-w-[540px] md:max-w-[1100px] lg:max-w-[1800px] xl:max-w-[1300px] 2xl:max-w-[1200px] w-full flex items-center flex-col">
-            <div className="flex flex-col mt-20 mb-6 text-center gap-4 lg:gap-0">
+            <div className="bg-[#0d132f] h-20 z-[1] relative" />
+            <div className="h-full min-h-[60vh] w-full flex justify-center items-center">
               <div
                 style={{ fontFamily: "Mukata Mahee Bold" }}
-                className="text-4xl lg:text-[2.5em]"
+                className="text-[#fa5e4d] text-9xl animate-spin"
+              >
+                <CgSpinnerTwoAlt />
+              </div>
+            </div>
+          </section>
+        ) : (
+          <section className="pt-8 lg:pt-12 flex justify-center w-full relative">
+            <div className="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] w-full px-4">
+              {/* Título principal */}
+              <div className="flex flex-wrap mb-8 lg:mb-10">
+                <div className="w-full text-center">
+                  <p
+                    className="text-3xl sm:text-4xl lg:text-5xl mb-4"
+                    data-aos="fade-down"
+                    data-aos-delay="100"
+                    style={{
+                      fontFamily: "Mukata Mahee Extra Bold",
+                    }}
+                  >
+                    Encuentra tu Negocio
+                  </p>
+                  <div className="w-full flex justify-center">
+                    <p
+                      className="text-sm sm:text-base lg:text-lg w-full sm:w-[85%] lg:w-full px-4 lg:px-0"
+                      data-aos="fade-down"
+                      data-aos-delay="300"
+                      style={{
+                        color: "#9f9c9d",
+                        fontFamily: "Mukata Mahee Regular",
+                        lineHeight: "1.875em",
+                      }}
+                    >
+                      Invierte en una empresa de éxito y se parte de un equipo
+                      ganador
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Categorías y marcas */}
+              <div className="w-full flex justify-center">
+                <div className="w-full lg:w-full">
+                  {/* Tabs de categorías */}
+                  <div className="border-b mb-6">
+                    <ul className="flex justify-center gap-2 flex-wrap">
+                      {categories.map((category) => (
+                        <li
+                          onChange={() => handleCategoryChange(category.value)}
+                          key={category.id}
+                          className={`${
+                            selectedCategory === category.value
+                              ? "text-[#CC4B3D]"
+                              : "text-[#0d132f]"
+                          } opcion flex hover:text-[#CC4B3D] cursor-pointer`}
+                        >
+                          <label
+                            className="border-0 text-xs sm:text-sm lg:text-base px-3 lg:px-10 py-2 gap-1 flex justify-center items-center cursor-pointer"
+                            htmlFor={category.id}
+                          >
+                            <FontAwesomeIcon icon={category.icon} className="text-sm lg:text-base" />
+                            <span className="whitespace-nowrap">{category.value}</span>
+                          </label>
+                          <input
+                            id={category.id}
+                            type="radio"
+                            name="categories"
+                            value={category.value}
+                            className="categoriesHome"
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Grid de marcas */}
+                  <div className="flex flex-wrap mb-8 lg:mb-12">
+                    {popularBrands.results.map((marca, index) => {
+                      if (
+                        selectedCategory === "Todo" ||
+                        selectedCategory === marca.categoria.nombre
+                      ) {
+                        return <MarcaCard marca={marca} key={index} />;
+                      }
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Sección de video - 100% horizontal, sin espacios */}
+        <section className="w-full leading-none">
+          <a
+            href="https://experiencia.escala.com/escala-franquiciaplus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full leading-none"
+          >
+            <video
+              className="w-full h-auto object-contain block bg-white m-0 leading-none"
+              loop
+              autoPlay
+              preload="auto"
+              muted
+              playsInline
+            >
+              <source type="video/mp4" src="/video.mp4" />
+            </video>
+          </a>
+        </section>
+
+        {/* Sección de nuevas franquicias */}
+        <section className="text-white pt-12 lg:pt-16 pb-12 lg:pb-16 flex justify-center gradientHomeBg w-full">
+          <div className="sm:max-w-[540px] md:max-w-[1100px] lg:max-w-[1800px] xl:max-w-[1300px] 2xl:max-w-[1200px] w-full flex items-center flex-col px-4">
+            <div className="flex flex-col mb-8 lg:mb-12 text-center gap-3 lg:gap-2">
+              <div
+                style={{ fontFamily: "Mukata Mahee Bold" }}
+                className="text-3xl sm:text-4xl lg:text-[2.5em]"
               >
                 Encuentra más franquicias
               </div>
-              <div className="text-3xl lg:text-[1em]">
+              <div className="text-base sm:text-lg lg:text-[1em] px-4">
                 Sé el primero en soñar y aprovecha los beneficios de negocios
                 rentables.
               </div>
             </div>
             <div className="flex justify-center w-full">
-              <div className="w-[90%]">
-                <div className="flex flex-wrap mt-5 mb-5">
+              <div className="w-full">
+                <div className="flex flex-wrap mb-8 lg:mb-10">
                   {newBrands.results.map((marca, index) => (
                     <MarcaCard marca={marca} key={index} />
                   ))}
                 </div>
               </div>
             </div>
-            <div className="w-full h-16 flex justify-center ">
-              <div
+            <div className="w-full flex justify-center mb-4">
+              <button
                 onClick={scrollSearchBox}
-                className="cursor-pointer px-16 rounded-2xl border border-transparent hover:border-[#fa5e4d] hover:text-[#fa5e4d] text-2xl bg-[#02C5D5] flex justify-center items-center text-black no-underline"
+                className="cursor-pointer px-8 sm:px-12 lg:px-16 py-3 lg:py-4 rounded-2xl border-2 border-transparent hover:border-[#fa5e4d] hover:text-[#fa5e4d] text-lg sm:text-xl lg:text-2xl bg-[#02C5D5] flex justify-center items-center text-black no-underline transition-all duration-300 font-medium"
               >
-                Buscar mas categorías
-              </div>
+                Buscar más categorías
+              </button>
             </div>
           </div>
         </section>
 
+        {/* Testimonios */}
         <section>
           <div className="block lg:hidden">
             <HomeCarouselPhone />
@@ -282,15 +286,23 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
             <HomeCarouselPc />
           </div>
         </section>
+        
+        {/* Categorías recomendadas */}
         <section>
           <RecommendedCategories />
         </section>
+        
+        {/* Blogs */}
         <section>
           <BlogsHome />
         </section>
+        
+        {/* Publicidad */}
         <section>
           <PublicityComponent />
         </section>
+        
+        {/* Footer */}
         <section>
           <Footer />
         </section>

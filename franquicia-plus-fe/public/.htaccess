@@ -2,13 +2,13 @@ RewriteEngine On
 
 # www to non www redirect (mantener tu configuración actual)
 RewriteBase /
-RewriteCond %{HTTP_HOST} www.franquiciaplus.com [NC]
-RewriteRule ^(.*)$ https://franquiciaplus.com/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} www.fplusglobal.com [NC]
+RewriteRule ^(.*)$ https://fplusglobal.com/$1 [R=301,L]
 
 # Http to https (mantener tu configuración actual)
 RewriteCond %{SERVER_PORT} 80
 RewriteCond %{HTTP_HOST} ^franquiciaplus\.com [NC]
-RewriteRule ^(.*)$ https://franquiciaplus.com/$1 [R,L]
+RewriteRule ^(.*)$ https://fplusglobal.com/$1 [R,L]
 
 # Servir WebP cuando esté disponible y el navegador lo soporte
 <IfModule mod_rewrite.c>
