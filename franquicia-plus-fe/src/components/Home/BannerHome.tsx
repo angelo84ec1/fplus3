@@ -7,9 +7,11 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import pc1 from "../../assets/img-franquicias/BannerHome/1.2.png";
 import pc2 from "../../assets/img-franquicias/BannerHome/1.1.png";
 import pc3 from "../../assets/img-franquicias/BannerHome/1.3.png";
+import pc4 from "../../assets/img-franquicias/BannerHome/1.4.png";
 import ph1 from "../../assets/img-franquicias/BannerHome/Group -41.png";
 import ph2 from "../../assets/img-franquicias/BannerHome/Group -43.png";
 import ph3 from "../../assets/img-franquicias/BannerHome/Group -42.png";
+import ph4 from "../../assets/img-franquicias/BannerHome/Group -44.png";
 import { Sector } from "@/types/Sector";
 import { Inversion } from "@/types/Inversion";
 import axios from "@/app/utils/axios";
@@ -177,6 +179,20 @@ export default function BannerHome({ onChangeTipo }: any) {
               </div>
             </div>
           </Carousel.Item>
+          <Carousel.Item interval={3000} className="h-[720px]">
+            <Image
+              unoptimized
+              draggable={false}
+              className="images"
+              src={pc4}
+              alt="First slide"
+            />
+            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-7xl w-[32rem]">
+              <div className="mb-72 fade-in text-white">
+                FRANQUICIAS RENTABLES
+              </div>
+            </div>
+          </Carousel.Item>
         </Carousel>
       </div>
       {/* Banner for Phone */}
@@ -235,6 +251,21 @@ export default function BannerHome({ onChangeTipo }: any) {
           <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
             <div className="mt-40 fade-in text-white">
               CONSTRUIMOS FRANQUICIAS
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item interval={3000} className="h-[710px]">
+          <Image
+            unoptimized
+            draggable={false}
+            className="images"
+            src={ph4}
+            alt=""
+          />
+
+          <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
+            <div className="mt-40 fade-in text-white">
+              FRANQUICIAS DESDE $4.000
             </div>
           </div>
         </Carousel.Item>

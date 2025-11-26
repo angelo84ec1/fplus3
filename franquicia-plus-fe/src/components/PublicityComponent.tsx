@@ -47,7 +47,7 @@ const PublicityComponent = () => {
               <a
                 className="no-underline"
                 target="_blank"
-                href="https://api.whatsapp.com/send/?phone=593999209555&text=Hola, estoy interesado en franquciar mi negocio.&app_absent=0"
+                href="https://api.whatsapp.com/send/?phone=593999209555&text=Hola, estoy interesado en franquiciar mi negocio.&app_absent=0"
               >
                 <button
                   className="lg:text-xl text-2xl lg:px-4 px-6 py-2 bg-[#02C5D5] text-black hover:bg-[#F85E4D] hover:text-white rounded-2xl"
