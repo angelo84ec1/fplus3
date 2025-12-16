@@ -1,33 +1,93 @@
 "use client";
 import { useState } from "react";
+import { StaticImageData } from "next/image";
+import portadaNitro from "../../assets/img-franquicias/portada-nitro-paradise.png";
+import portadaBlackphone from "../../assets/img-franquicias/portada-blackphone.png";
+import portadaItaly from "../../assets/img-franquicias/portada-italy-matriz.png";
+import portadaItalychillos from "../../assets/img-franquicias/italy-valle-chillos.png";
+import portadamochis from "../../assets/img-franquicias/mochis-franc.png";
 
 // Lista de testimonios con videos de Amazon S3
 const testimonials = [
   {
     id: 1,
     title: "Nitro Paradice",
-    description: "Una experiencia única de emprendimiento exitoso",
+    description: "Somos el Bubble Tea, Helado y Café del futuro basado en el nitrógeno como elemento principal con una experiencia familiar y divertida.",
     videoUrl:
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+NitroParadice+(Reemplazar+por+el+Antiguo).mp4",
     gradient: "from-purple-500 to-pink-500",
+    thumbnailImage: portadaNitro,
   },
   {
     id: 2,
     title: "BlackPhone",
-    description: "Innovación y éxito en el sector tecnológico",
+    description: "Venta de productos Apple Open Box, Trade-In y accesorios, ofreciendo garantía de 2 años y experiencia de compra premium en Ecuador.",
     videoUrl:
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+BlackPhone+(1).mp4",
     gradient: "from-gray-700 to-gray-900",
+    thumbnailImage: portadaBlackphone,
   },
   {
     id: 3,
     title: "Little Italy",
-    description: "Sabor auténtico italiano en cada bocado",
+    description: "La mejor calidad de pizzas en Horno de Leña, con la elaboración del producto frente a cada cliente en un ambiente muy italiano.",
     videoUrl:
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Little+Italy.mp4",
     gradient: "from-green-500 to-emerald-600",
+    thumbnailImage: portadaItaly,
+  },
+  {
+    id: 4,
+    title: "Little Italy Chillos",
+    description: "La mejor calidad de pizzas en Horno de Leña, con la elaboración del producto frente a cada cliente en un ambiente muy italiano.",
+    videoUrl:
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Franquiciado+Little+Italy+Los+Chillos.mp4",
+    gradient: "from-green-500 to-emerald-600",
+    thumbnailImage: portadaItalychillos,
+  },
+  {
+
+    id: 5,
+    title: "Mochi Helado Artesanal",
+    description: "Manufactura y venta al por menor y mayor de mochis rellenos de helado artesanal.",
+    videoUrl:
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Mochi+Helado+Artesanal+(formato+historia).mp4",
+    gradient: "from-green-500 to-emerald-600",
+    thumbnailImage: portadamochis,
   },
 ];
+
+// Componente para el thumbnail
+function VideoThumbnail({ 
+  gradient, 
+  thumbnailImage 
+}: { 
+  gradient: string;
+  thumbnailImage?: string | StaticImageData;
+}) {
+  const [imageError, setImageError] = useState(false);
+
+  const imageSrc = typeof thumbnailImage === 'string' 
+    ? thumbnailImage 
+    : thumbnailImage?.src;
+
+  return (
+    <div className="relative aspect-video bg-black overflow-hidden">
+      {imageSrc && !imageError ? (
+        <img
+          src={imageSrc}
+          alt="Video thumbnail"
+          onError={() => setImageError(true)}
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+          <div className="text-white text-4xl font-bold">▶</div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Testimonials() {
   const [selectedVideo, setSelectedVideo] = useState<{
@@ -37,8 +97,8 @@ export default function Testimonials() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col items-center px-6 py-16 bg[-gradient-to-b from-gray-50 to-white]">
-      {/* Título mejorado */}
+    <div className="flex flex-col items-center px-6 py-16">
+      {/* Título */}
       <div className="text-center mb-12">
         <h2
           className="text-3xl md:text-4xl font-bold mb-4 tracking-tight"
@@ -48,11 +108,11 @@ export default function Testimonials() {
         </h2>
         <div className="w-24 h-1 bg-[#02C5D5] mx-auto rounded-full"></div>
         <p className="mt-4 text-gray-600 text-lg">
-          Historias de éxito de nuestros franquiciados
+        LO QUE OPINAN NUESTROS CLIENTES 
         </p>
       </div>
 
-      {/* Contenedor de los videos en 3 columnas */}
+      {/* Grid de videos */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl w-full">
         {testimonials.map((item) => (
           <div
@@ -64,42 +124,42 @@ export default function Testimonials() {
             onMouseEnter={() => setHoveredId(item.id)}
             onMouseLeave={() => setHoveredId(null)}
           >
-            {/* Card con efecto de elevación */}
             <div className="relative overflow-hidden rounded-2xl shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:shadow-2xl">
-              {/* Thumbnail con gradiente */}
-              <div
-                className={`relative h-64 bg-gradient-to-br ${item.gradient} flex items-center justify-center`}
-              >
-                {/* Play button animado */}
+              {/* Thumbnail */}
+              <div className="relative">
+                <VideoThumbnail 
+                  gradient={item.gradient}
+                  thumbnailImage={item.thumbnailImage}
+                />
+                
+                {/* Overlay */}
                 <div
                   className={`absolute inset-0 bg-black transition-opacity duration-300 ${
                     hoveredId === item.id ? "bg-opacity-30" : "bg-opacity-40"
                   }`}
                 ></div>
                 
-                <div
-                  className={`relative z-10 flex items-center justify-center w-20 h-20 rounded-full bg-white transition-all duration-300 ${
-                    hoveredId === item.id
-                      ? "scale-110 bg-opacity-100"
-                      : "bg-opacity-90"
-                  }`}
-                >
-                  <svg
-                    className="w-10 h-10 text-gray-800 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
+                {/* Play button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div
+                    className={`relative z-10 flex items-center justify-center w-20 h-20 rounded-full bg-white transition-all duration-300 ${
+                      hoveredId === item.id
+                        ? "scale-110 bg-opacity-100"
+                        : "bg-opacity-90"
+                    }`}
                   >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                    <svg
+                      className="w-10 h-10 text-gray-800 ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </div>
-
-                {/* Efecto de brillo en hover */}
-                {hoveredId === item.id && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 animate-shimmer"></div>
-                )}
               </div>
 
-              {/* Información del testimonio */}
+              {/* Info */}
               <div className="bg-white p-6">
                 <h3 className="text-2xl font-bold mb-2 text-gray-800 group-hover:text-[#02C5D5] transition-colors">
                   {item.title}
@@ -110,7 +170,6 @@ export default function Testimonials() {
                   </p>
                 )}
                 
-                {/* Indicador de "Ver video" */}
                 <div className="mt-4 flex items-center text-[#02C5D5] font-medium text-sm">
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
                     Ver testimonio
@@ -135,17 +194,16 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* Modal de video mejorado */}
+      {/* Modal */}
       {selectedVideo && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 p-4 backdrop-blur-sm animate-fadeIn"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 p-4 backdrop-blur-sm"
           onClick={() => setSelectedVideo(null)}
         >
           <div
-            className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl max-w-5xl w-full shadow-2xl animate-scaleIn"
+            className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl max-w-5xl w-full shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header del modal */}
             <div className="flex items-center justify-between p-6 border-b border-gray-700">
               <h3 className="text-2xl font-bold text-white">
                 {selectedVideo.title}
@@ -153,25 +211,13 @@ export default function Testimonials() {
               <button
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 hover:bg-red-600 text-white transition-all duration-200 hover:scale-110"
                 onClick={() => setSelectedVideo(null)}
-                aria-label="Cerrar video"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
 
-            {/* Reproductor de video */}
             <div className="p-6">
               <video
                 className="w-full aspect-video rounded-xl shadow-lg"
@@ -184,49 +230,6 @@ export default function Testimonials() {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-        
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-        
-        .animate-scaleIn {
-          animation: scaleIn 0.3s ease-out;
-        }
-      `}</style>
     </div>
   );
 }

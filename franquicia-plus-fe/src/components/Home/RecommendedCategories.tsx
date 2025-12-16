@@ -34,7 +34,7 @@ const RecommendedCategories = () => {
               className="mb-3 text-[#02C5D5] text-4xl"
               style={{ fontFamily: "Mukata Mahee Bold" }}
             >
-              Categorías Recomendadas 2024
+              Categorías Recomendadas 2026
             </p>
             <p className="text-white text-2xl">
               Invierte en una empresa de exito

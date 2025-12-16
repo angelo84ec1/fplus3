@@ -1,33 +1,92 @@
 "use client";
 import { useState } from "react";
+import { StaticImageData } from "next/image";
+import portadaNitro from "../../assets/img-franquicias/portada-nitro-paradise.png";
+import portadaBlackphone from "../../assets/img-franquicias/portada-blackphone.png";
+import portadaItaly from "../../assets/img-franquicias/portada-italy-matriz.png";
+import portadaItalychillos from "../../assets/img-franquicias/italy-valle-chillos.png";
+import portadamochis from "../../assets/img-franquicias/mochis-franc.png";
 
 // Lista de testimonios con videos de Amazon S3
 const testimonials = [
   {
     id: 1,
     title: "Nitro Paradice",
-    description: "Una experiencia única de emprendimiento exitoso",
+    description: "Somos el Bubble Tea, Helado y Café del futuro basado en el nitrógeno como elemento principal con una experiencia familiar y divertida.",
     videoUrl:
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+NitroParadice+(Reemplazar+por+el+Antiguo).mp4",
     gradient: "from-purple-500 to-pink-500",
+    thumbnailImage: portadaNitro,
   },
   {
     id: 2,
     title: "BlackPhone",
-    description: "Innovación y éxito en el sector tecnológico",
+    description: "Venta de productos Apple Open Box, Trade-In y accesorios, ofreciendo garantía de 2 años y experiencia de compra premium en Ecuador.",
     videoUrl:
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+BlackPhone+(1).mp4",
     gradient: "from-gray-700 to-gray-900",
+    thumbnailImage: portadaBlackphone,
   },
   {
     id: 3,
     title: "Little Italy",
-    description: "Sabor auténtico italiano en cada bocado",
+    description: "La mejor calidad de pizzas en Horno de Leña, con la elaboración del producto frente a cada cliente en un ambiente muy italiano.",
     videoUrl:
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Little+Italy.mp4",
     gradient: "from-green-500 to-emerald-600",
+    thumbnailImage: portadaItaly,
+  },
+  {
+    id: 4,
+    title: "Little Italy Chillos",
+    description: "La mejor calidad de pizzas en Horno de Leña, con la elaboración del producto frente a cada cliente en un ambiente muy italiano.",
+    videoUrl:
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Franquiciado+Little+Italy+Los+Chillos.mp4",
+    gradient: "from-green-500 to-emerald-600",
+    thumbnailImage: portadaItalychillos,
+  },
+  {
+    id: 5,
+    title: "Mochi Helado Artesanal",
+    description: "Manufactura y venta al por menor y mayor de mochis rellenos de helado artesanal.",
+    videoUrl:
+      "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Mochi+Helado+Artesanal+(formato+historia).mp4",
+    gradient: "from-blue-500 to-purple-600",
+    thumbnailImage: portadamochis,
   },
 ];
+
+// Componente para el thumbnail optimizado para móvil
+function VideoThumbnail({ 
+  gradient, 
+  thumbnailImage 
+}: { 
+  gradient: string;
+  thumbnailImage?: string | StaticImageData;
+}) {
+  const [imageError, setImageError] = useState(false);
+
+  const imageSrc = typeof thumbnailImage === 'string' 
+    ? thumbnailImage 
+    : thumbnailImage?.src;
+
+  return (
+    <div className="relative h-48 bg-black overflow-hidden">
+      {imageSrc && !imageError ? (
+        <img
+          src={imageSrc}
+          alt="Video thumbnail"
+          onError={() => setImageError(true)}
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <div className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+          <div className="text-white text-3xl font-bold">▶</div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function TestimonialsPhone() {
   const [selectedVideo, setSelectedVideo] = useState<{
@@ -45,10 +104,9 @@ export default function TestimonialsPhone() {
         >
           TESTIMONIOS
         </h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+        <div className="w-20 h-1  bg-[#02C5D5] mx-auto rounded-full"></div>
         <p className="mt-3 text-gray-600 text-sm px-4">
-          Historias de éxito de nuestros franquiciados
-        </p>
+          LO QUE OPINAN NUESTROS CLIENTES  </p>
       </div>
 
       {/* Contenedor de los videos en columna para móvil */}
@@ -63,24 +121,28 @@ export default function TestimonialsPhone() {
           >
             {/* Card optimizada para móvil */}
             <div className="relative overflow-hidden rounded-xl shadow-lg">
-              {/* Thumbnail con gradiente */}
-              <div
-                className={`relative h-48 bg-gradient-to-br ${item.gradient} flex items-center justify-center`}
-              >
+              {/* Thumbnail con imagen o gradiente */}
+              <div className="relative">
+                <VideoThumbnail 
+                  gradient={item.gradient}
+                  thumbnailImage={item.thumbnailImage}
+                />
+                
                 {/* Overlay oscuro */}
                 <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 
                 {/* Play button */}
-                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-white bg-opacity-95 shadow-lg">
-                  <svg
-                    className="w-8 h-8 text-gray-800 ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-white bg-opacity-95 shadow-lg">
+                    <svg
+                      className="w-8 h-8 text-gray-800 ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
                 </div>
-
               </div>
 
               {/* Información del testimonio */}

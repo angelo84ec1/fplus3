@@ -137,7 +137,7 @@ export default function BannerHome({ onChangeTipo }: any) {
           controls
           className="static h-[720px]"
         >
-          <Carousel.Item interval={3000} className="h-[720px]">
+          <Carousel.Item interval={3000} className="h-[790px]">
             <Image
               unoptimized
               draggable={false}
@@ -145,13 +145,14 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc1}
               alt="First slide"
             />
-            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-7xl w-[35rem]">
-              <div className="mb-72 fade-in text-white">
-                FRANQUICIAS DESDE $6.000
-              </div>
-            </div>
+        <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+  <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+    <span className="whitespace-nowrap">LAS MEJORES MARCAS </span>
+    <span className="whitespace-nowrap"> DE FRANQUICIAS</span>
+  </div>
+</div>
           </Carousel.Item>
-          <Carousel.Item interval={3000} className="h-[720px]">
+          <Carousel.Item interval={3000} className="h-[790px]">
             <Image
               unoptimized
               draggable={false}
@@ -159,13 +160,14 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc2}
               alt="First slide"
             />
-            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-7xl w-[32rem]">
-              <div className="mb-72 fade-in text-white">
-                ¿CUÁL FRANQUICIA ES PARA TÍ?
-              </div>
-            </div>
+              <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+  <div className="mb-52 fade-in text-[#02c5d5] flex flex-col gap-2">
+    <span className="whitespace-nowrap">EXPLORA CUÁL FRANQUICIA  </span>
+    <span className="whitespace-nowrap"> ES PARA TI </span>
+  </div>
+</div>
           </Carousel.Item>
-          <Carousel.Item interval={3000} className="h-[720px]">
+          <Carousel.Item interval={3000} className="h-[790px]">
             <Image
               unoptimized
               draggable={false}
@@ -173,13 +175,14 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc3}
               alt="First slide"
             />
-            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-7xl w-[35rem]">
-              <div className="mb-72 fade-in text-white">
-                CONSTRUIMOS FRANQUICIAS
-              </div>
-            </div>
+          <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+  <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+    <span className="whitespace-nowrap">DESARROLLAMOS  </span>
+    <span className="whitespace-nowrap"> SISTEMAS DE FRANQUICIAS</span>
+  </div>
+</div>
           </Carousel.Item>
-          <Carousel.Item interval={3000} className="h-[720px]">
+          <Carousel.Item interval={3000} className="h-[790px]">
             <Image
               unoptimized
               draggable={false}
@@ -187,11 +190,12 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc4}
               alt="First slide"
             />
-            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-7xl w-[32rem]">
-              <div className="mb-72 fade-in text-white">
-                FRANQUICIAS RENTABLES
-              </div>
-            </div>
+            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+  <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+    <span className="whitespace-nowrap">FRANQUICIAS RENTABLES  </span>
+    <span className="whitespace-nowrap"> Y COMPROBADAS </span>
+  </div>
+</div>
           </Carousel.Item>
         </Carousel>
       </div>
@@ -219,8 +223,9 @@ export default function BannerHome({ onChangeTipo }: any) {
           />
 
           <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white">
-              FRANQUICIAS DESDE $4.000
+            <div className="mt-40 fade-in text-white flex flex-col">
+            <span className="whitespace-nowrap">LAS MEJORES MARCAS </span>
+            <span className="whitespace-nowrap"> DE FRANQUICIAS</span>
             </div>
           </div>
         </Carousel.Item>
@@ -234,8 +239,9 @@ export default function BannerHome({ onChangeTipo }: any) {
           />
 
           <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white">
-              ¿CUÁL FRANQUICIA ES PARA TÍ?
+            <div className="mt-40 fade-in text-white flex flex-col">
+            <span className="whitespace-nowrap">DESARROLLAMOS  </span>
+            <span className="whitespace-nowrap"> SISTEMAS DE FRANQUICIAS</span>
             </div>
           </div>
         </Carousel.Item>
@@ -249,8 +255,9 @@ export default function BannerHome({ onChangeTipo }: any) {
           />
 
           <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white">
-              CONSTRUIMOS FRANQUICIAS
+            <div className="mt-40 fade-in text-white flex flex-col">
+            <span className="whitespace-nowrap">EXPLORA CUÁL FRANQUICIA  </span>
+            <span className="whitespace-nowrap"> ES PARA TI </span>
             </div>
           </div>
         </Carousel.Item>
@@ -264,8 +271,9 @@ export default function BannerHome({ onChangeTipo }: any) {
           />
 
           <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white">
-              FRANQUICIAS DESDE $4.000
+            <div className="mt-40 fade-in text-white flex flex-col">
+            <span className="whitespace-nowrap">FRANQUICIAS RENTABLES  </span>
+            <span className="whitespace-nowrap"> Y COMPROBADAS </span>
             </div>
           </div>
         </Carousel.Item>

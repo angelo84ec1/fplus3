@@ -142,7 +142,7 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
               <div className="flex flex-wrap mb-8 lg:mb-10">
                 <div className="w-full text-center">
                   <p
-                    className="text-3xl sm:text-4xl lg:text-5xl mb-4"
+                    className="text-3xl sm:text-4xl lg:text-5xl mb-4 mt-8"
                     data-aos="fade-down"
                     data-aos-delay="100"
                     style={{
