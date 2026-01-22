@@ -64,7 +64,7 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="Franquicias en Ecuador, encuentra negocios rentables en farmacias, franquicias de disensa, servientrega, kfc, starbucks, bogati, sweet and coffee y más."
+          content="Somos la empresa Líder en el Desarrollo y Comercialización de Negocios y Franquicias desde el 2006."
         />
         <meta
           property="og:image"

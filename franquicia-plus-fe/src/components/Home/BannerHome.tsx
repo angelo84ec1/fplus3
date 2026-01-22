@@ -145,12 +145,12 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc1}
               alt="First slide"
             />
-        <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
-  <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
-    <span className="whitespace-nowrap">LAS MEJORES MARCAS </span>
-    <span className="whitespace-nowrap"> DE FRANQUICIAS</span>
-  </div>
-</div>
+            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+              <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+                <span className="whitespace-nowrap">LAS MEJORES MARCAS </span>
+                <span className="whitespace-nowrap"> DE FRANQUICIAS</span>
+              </div>
+            </div>
           </Carousel.Item>
           <Carousel.Item interval={3000} className="h-[790px]">
             <Image
@@ -160,12 +160,12 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc2}
               alt="First slide"
             />
-              <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
-  <div className="mb-52 fade-in text-[#02c5d5] flex flex-col gap-2">
-    <span className="whitespace-nowrap">EXPLORA CUÁL FRANQUICIA  </span>
-    <span className="whitespace-nowrap"> ES PARA TI </span>
-  </div>
-</div>
+            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+              <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+                <span className="whitespace-nowrap">EXPLORA CUÁL FRANQUICIA  </span>
+                <span className="whitespace-nowrap"> ES PARA TI </span>
+              </div>
+            </div>
           </Carousel.Item>
           <Carousel.Item interval={3000} className="h-[790px]">
             <Image
@@ -175,12 +175,12 @@ export default function BannerHome({ onChangeTipo }: any) {
               src={pc3}
               alt="First slide"
             />
-          <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
-  <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
-    <span className="whitespace-nowrap">DESARROLLAMOS  </span>
-    <span className="whitespace-nowrap"> SISTEMAS DE FRANQUICIAS</span>
-  </div>
-</div>
+            <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
+              <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+                <span className="whitespace-nowrap">DESARROLLAMOS  </span>
+                <span className="whitespace-nowrap"> SISTEMAS DE FRANQUICIAS</span>
+              </div>
+            </div>
           </Carousel.Item>
           <Carousel.Item interval={3000} className="h-[790px]">
             <Image
@@ -191,11 +191,11 @@ export default function BannerHome({ onChangeTipo }: any) {
               alt="First slide"
             />
             <div className="absolute h-full top-0 bottom-0 flex items-center ml-40 text-6xl w-[35rem]">
-  <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
-    <span className="whitespace-nowrap">FRANQUICIAS RENTABLES  </span>
-    <span className="whitespace-nowrap"> Y COMPROBADAS </span>
-  </div>
-</div>
+              <div className="mb-52 fade-in text-[#ffffff] flex flex-col gap-2">
+                <span className="whitespace-nowrap">FRANQUICIAS RENTABLES  </span>
+                <span className="whitespace-nowrap"> Y COMPROBADAS </span>
+              </div>
+            </div>
           </Carousel.Item>
         </Carousel>
       </div>
@@ -222,10 +222,10 @@ export default function BannerHome({ onChangeTipo }: any) {
             alt=""
           />
 
-          <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white flex flex-col">
-            <span className="whitespace-nowrap">LAS MEJORES MARCAS </span>
-            <span className="whitespace-nowrap"> DE FRANQUICIAS</span>
+          <div className="absolute h-full top-0 left-0 right-0 flex items-start px-6 text-3xl sm:text-4xl">
+            <div className="mt-32 sm:mt-40 fade-in text-white flex flex-col gap-1 max-w-[90%]">
+              <span className="leading-tight">LAS MEJORES MARCAS</span>
+              <span className="leading-tight">DE FRANQUICIAS</span>
             </div>
           </div>
         </Carousel.Item>
@@ -238,10 +238,10 @@ export default function BannerHome({ onChangeTipo }: any) {
             alt=""
           />
 
-          <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white flex flex-col">
-            <span className="whitespace-nowrap">DESARROLLAMOS  </span>
-            <span className="whitespace-nowrap"> SISTEMAS DE FRANQUICIAS</span>
+          <div className="absolute h-full top-0 left-0 right-0 flex items-start px-6 text-3xl sm:text-4xl">
+            <div className="mt-32 sm:mt-40 fade-in text-white flex flex-col gap-1 max-w-[90%]">
+              <span className="leading-tight">DESARROLLAMOS</span>
+              <span className="leading-tight">SISTEMAS DE FRANQUICIAS</span>
             </div>
           </div>
         </Carousel.Item>
@@ -254,10 +254,10 @@ export default function BannerHome({ onChangeTipo }: any) {
             alt=""
           />
 
-          <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white flex flex-col">
-            <span className="whitespace-nowrap">EXPLORA CUÁL FRANQUICIA  </span>
-            <span className="whitespace-nowrap"> ES PARA TI </span>
+          <div className="absolute h-full top-0 left-0 right-0 flex items-start px-6 text-3xl sm:text-4xl">
+            <div className="mt-32 sm:mt-40 fade-in text-white flex flex-col gap-1 max-w-[90%]">
+              <span className="leading-tight">EXPLORA CUÁL FRANQUICIA</span>
+              <span className="leading-tight">ES PARA TI</span>
             </div>
           </div>
         </Carousel.Item>
@@ -270,10 +270,10 @@ export default function BannerHome({ onChangeTipo }: any) {
             alt=""
           />
 
-          <div className="absolute h-full top-0 flex items-start ml-10 text-4xl w-[3rem]">
-            <div className="mt-40 fade-in text-white flex flex-col">
-            <span className="whitespace-nowrap">FRANQUICIAS RENTABLES  </span>
-            <span className="whitespace-nowrap"> Y COMPROBADAS </span>
+          <div className="absolute h-full top-0 left-0 right-0 flex items-start px-6 text-3xl sm:text-4xl">
+            <div className="mt-32 sm:mt-40 fade-in text-white flex flex-col gap-1 max-w-[90%]">
+              <span className="leading-tight">FRANQUICIAS RENTABLES</span>
+              <span className="leading-tight">Y COMPROBADAS</span>
             </div>
           </div>
         </Carousel.Item>
@@ -337,25 +337,25 @@ export default function BannerHome({ onChangeTipo }: any) {
             </div>
 
             <div className="w-full mt-0 absolute lg:-top-13 -top-16 -left-5 flex md:justify-start justify-between gap-2">
-  {TIPO_CHOICES.map((item, index) => (
-    <label
-      key={index}
-      className={`text-xl md:text-2xl lg:text-base md:px-3 px-6 py-[6px] rounded-lg border border-gray-200 cursor-pointer transition-colors duration-300 text-center w-1/2 min-w-[58%] md:w-auto md:min-w-0 ${
-        tipo === item.code ? "bg-[#29bdd3] text-white" : "bg-white"
-      } hover:bg-[#29bdd3]/80 hover:text-white`}
-    >
-      <input
-        type="radio"
-        name="tipo"
-        id={`${index}`}
-        value={item.code}
-        onChange={changeTipo}
-        className="hidden"
-      />
-      {item.text}
-    </label>
-  ))}
-</div>
+              {TIPO_CHOICES.map((item, index) => (
+                <label
+                  key={index}
+                  className={`text-xl md:text-2xl lg:text-base md:px-3 px-6 py-[6px] rounded-lg border border-gray-200 cursor-pointer transition-colors duration-300 text-center w-1/2 min-w-[58%] md:w-auto md:min-w-0 ${
+                    tipo === item.code ? "bg-[#29bdd3] text-white" : "bg-white"
+                  } hover:bg-[#29bdd3]/80 hover:text-white`}
+                >
+                  <input
+                    type="radio"
+                    name="tipo"
+                    id={`${index}`}
+                    value={item.code}
+                    onChange={changeTipo}
+                    className="hidden"
+                  />
+                  {item.text}
+                </label>
+              ))}
+            </div>
 
 
             <div className="w-full h-[2.125em] lg:h-full flex items-center justify-center mt-4 lg:mt-0">
