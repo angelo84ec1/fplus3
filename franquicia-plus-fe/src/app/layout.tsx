@@ -33,9 +33,6 @@ export default function RootLayout({
         <title>FPlus Negocios y Franquicias</title>
         <meta name="description" content="Somos la empresa Líder en el Desarrollo y Comercialización de Negocios y Franquicias desde el 2006." />
 
-        {/* CANONICAL URL - MUY IMPORTANTE para SEO */}
-        <link rel="canonical" href={`${CANONICAL_DOMAIN}/`} />
-
         {/* Meta palabras clave */}
         <meta 
           name="keywords" 
@@ -81,7 +78,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:description"
-          content="Franquicias en Ecuador, encuentra negocios rentables en farmacias, franquicias de disensa, servientrega, kfc, starbucks, bogati, sweet and coffee y más."
+          content="Somos la empresa Líder en el Desarrollo y Comercialización de Negocios y Franquicias desde el 2006."
         />
         <meta
           name="twitter:image"
@@ -149,7 +146,7 @@ export default function RootLayout({
               address:
                 "De los Establos y Av. de los Conquistadores, edificio Cemacol Cumbayá - Quito - Ecuador",
               description:
-                "Franquicias en Ecuador, encuentra negocios rentables en farmacias, franquicias de disensa, servientrega, kfc, starbucks, bogati, sweet and coffee y más.",
+                "Somos la empresa Líder en el Desarrollo y Comercialización de Negocios y Franquicias desde el 2006.",
               email: "info@franquiciaplus.com",
               image: `${CANONICAL_DOMAIN}/FranquiciaPlusgoogle.png`,
               name: "Franquicias en Ecuador y Negocios rentables de Oportunidad", // Corregido "Necogios"

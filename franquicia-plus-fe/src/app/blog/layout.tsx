@@ -5,6 +5,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: blogSeo.seo.title,
   description: blogSeo.seo.description,
+  alternates: {
+    canonical: "https://fplusglobal.com/blog",
+  },
 };
 
 const PageLayout = async (props: any) => {

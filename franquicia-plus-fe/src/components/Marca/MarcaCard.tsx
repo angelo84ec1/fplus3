@@ -176,7 +176,7 @@ const Marca = ({ marca }: props) => {
               <div className="d-flex justify-content-end">
               <button
   type="button"
-  className="text-base font-semibold text-white bg-[#00c6d5] px-3 py-2 rounded-lg 
+  className="text-base font-semibold text-white bg-[#00c6d5] px-3 py-3 rounded-lg 
   shadow-[0_8px_16px_rgba(0,198,213,0.4),0_4px_8px_rgba(0,0,0,0.2)] 
   hover:px-4
   hover:py-3

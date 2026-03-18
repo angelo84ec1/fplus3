@@ -8,6 +8,7 @@ import portadaBlackphone from "@/assets/img-franquicias/portada-blackphone.png";
 import portadaItaly from "@/assets/img-franquicias/portada-italy-matriz.png";
 import portadaItalychillos from "@/assets/img-franquicias/italy-valle-chillos.png";
 import portadamochis from "@/assets/img-franquicias/mochis-franc.png";
+import portadasanasanacalderon from "@/assets/img-franquicias/sana-sana-calderon.png";
 import Image from "next/image";
 import React, { useState } from "react";
 import { StaticImageData } from "next/image";
@@ -58,7 +59,17 @@ const testimonials = [
       "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Mochi+Helado+Artesanal+(formato+historia).mp4",
     gradient: "from-blue-500 to-purple-600",
     thumbnailImage: portadamochis,
+    
   },
+  {
+  id: 6,
+  title: "Sana Sana Calderon",
+  description: "Venta Al Por Menor De Productos Farmacéuticos En Establecimientos Especializados. Ofrece a sus clientes excelencia en el servicio y un amplio portafolio",
+  videoUrl:
+    "https://video-websecua.s3.us-east-2.amazonaws.com/fplus/Testimonio+Sana+Sana.mp4",
+  gradient: "from-green-500 to-emerald-600",
+  thumbnailImage: portadasanasanacalderon,
+},
 ];
 
 // Componente para el thumbnail

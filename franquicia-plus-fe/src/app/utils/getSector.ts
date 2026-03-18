@@ -1,6 +1,6 @@
 const getSector = async (sector: string) => {
   try {
-    const url = `https://franquiciaplus.com/api/v1/${sector}`;
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/v1/${sector}`;
     const response = await fetch(url);
 
     if (response.status > 400) throw new Error("Status code err")

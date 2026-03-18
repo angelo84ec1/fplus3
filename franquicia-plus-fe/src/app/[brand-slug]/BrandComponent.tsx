@@ -1423,21 +1423,21 @@ const BrandComponent = ({ detalleMarca }: props) => {
                       {whiteBoxes.map((box, index) => (
                         <div
                           key={index}
-                          className="px-[1.25em] pb-[0.625em] pt-[1.25em] lg:w-[30%] md:w-[45%] w-full"
+                          className="px-[1.25em] pb-[0.625em] pt-[1.25em] lg:w-[30%] w-full"
                         >
                           <div className="h-[30%]">
                             <p
                               style={{ fontFamily: "Mukata Mahee Bold" }}
-                              className="lg:text-[1em] text-xs pb-[0.3125em] pl-[0.625em] text-[#47505a] italic"
+                              className="lg:text-[1.25em] text-xl pb-[0.3125em] pl-[0.625em] text-[#47505a] italic"
                             >
                               {box.title}
                             </p>
                           </div>
-                          <div className="bg-white rounded-lg h-[40px] w-full">
+                          <div className="bg-white rounded-lg h-[48px] w-full">
                             <div className="flex items-center h-full">
                               <p
                                 style={{ fontFamily: "Mukata Mahee Bold" }}
-                                className="lg:text-[1.125em] text-xs pl-[0.625em] text-[#47505a] italic"
+                                className="lg:text-[1.375em] text-xl pl-[0.625em] text-[#47505a] italic"
                               >
                                 {box.value}
                               </p>

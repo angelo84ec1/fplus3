@@ -1,20 +1,16 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Consultores de franquicias | F+ | franquiciamos tu negocio",
+  title: "Testimonios Franquicia Plus | Casos de éxito en Ecuador",
   description:
-    "Somos consultores de Franquicias en Ecuador , te enseñamos a franquiciar tu negocio o marca, a travez de una consultoría certificada por Franquicia Plus.",
+    "Conoce los testimonios de éxito de franquiciados en Ecuador con Franquicia Plus. Historias reales de emprendedores que lograron su independencia financiera.",
+  alternates: {
+    canonical: "https://fplusglobal.com/testimonios",
+  },
 };
 
 const PageLayout = async (props: any) => {
-  return (
-    <html lang="es">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      </head>
-      <body>{props.children}</body>
-    </html>
-  );
+  return <div>{props.children}</div>;
 };
 
 export default PageLayout;

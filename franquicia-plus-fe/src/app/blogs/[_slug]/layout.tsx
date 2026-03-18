@@ -1,28 +1,32 @@
-const PageLayout = async (props: any) => {
-  const blogUrl = props.params["_slug"];
+import { Metadata } from "next";
 
+type Props = {
+  params: { _slug: string };
+  children: React.ReactNode;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const blogUrl = params["_slug"];
   try {
     const article = require(`@/static/Content/BlogPost/${blogUrl}.json`);
-    const title = article.seo.title;
-    const description = article.seo.description;
-
-    return (
-      <div>
-        <head>
-          <title>{title}</title>
-          <meta name="description" content={description} />
-        </head>
-        <body>{props.children}</body>
-      </div>
-    );
+    return {
+      title: article.seo.title,
+      description: article.seo.description,
+      alternates: {
+        canonical: `https://fplusglobal.com/blogs/${blogUrl}`,
+      },
+    };
   } catch {
-    // Handle the error, perhaps by displaying an error message to the user
-    return (
-      <div>
-        <body>{props.children}</body>
-      </div>
-    );
+    return {};
   }
+}
+
+const PageLayout = async (props: any) => {
+  return (
+    <div>
+      <div>{props.children}</div>
+    </div>
+  );
 };
 
 export default PageLayout;

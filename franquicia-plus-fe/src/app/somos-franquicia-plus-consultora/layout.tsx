@@ -4,17 +4,13 @@ export const metadata: Metadata = {
   title: "Somos Franquicia Plus | Comercialización y Consultoría",
   description:
     "Somos una solución para marcas que quieren franquiciar su negocio o que ya son Franquiciantes. Comercializamos negocios de oportunidad en Ecuador.",
+  alternates: {
+    canonical: "https://fplusglobal.com/somos-franquicia-plus-consultora",
+  },
 };
 
 const PageLayout = async (props: any) => {
-  return (
-    <html lang="es">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      </head>
-      <body>{props.children}</body>
-    </html>
-  );
+  return <div>{props.children}</div>;
 };
 
 export default PageLayout;
