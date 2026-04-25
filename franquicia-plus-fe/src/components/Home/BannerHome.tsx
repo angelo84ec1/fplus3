@@ -19,30 +19,17 @@ import { useRouter } from "next/navigation";
 
 export default function BannerHome({ onChangeTipo }: any) {
   const router = useRouter();
-  const [ubicacion, setUbicacion] = useState<Sector[]>([]);
   const [categoria, setCategoria] = useState<Sector[]>([]);
   const [inversion, setInversion] = useState<Inversion[]>([]);
-  const [ubicacionElegida, setUbicacionElegida] = useState<string>("");
+  const [ubicacionElegida] = useState<string>("Ecuador");
   const [categoriaElegida, setCategoriaElegida] = useState<string>("");
   const [inversionElegida, setInversionElegida] = useState<string>("");
   const [tipo, setTipo] = useState<string>("");
 
   useEffect(() => {
-    getUbicacion();
     getCategoria();
     getInversion();
   }, []);
-
-  const getUbicacion = async () => {
-    await axios
-      .get("/api/v1/ubicacion/")
-      .then((response) => {
-        setUbicacion(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   const getCategoria = async () => {
     await axios.get("/api/v1/categoria/").then((response) => {
@@ -284,25 +271,9 @@ export default function BannerHome({ onChangeTipo }: any) {
         <div
           id="searchBox"
           style={{ boxShadow: "0.125em 1.5em 1.25em 0 #00000063" }}
-          className="absolute w-[80%] h-[23em] lg:w-[60em] lg:h-[6em] top-[450px] lg:top-[480px] lg:bottom-0 -bottom-52 z-[2] bg-white mx-auto my-0 p-[5px] rounded-[1.5719em] border-[black]"
+          className="absolute w-[80%] h-[18em] lg:w-[60em] lg:h-[6em] top-[450px] lg:top-[480px] lg:bottom-0 -bottom-32 z-[2] bg-white mx-auto my-0 p-[5px] rounded-[1.5719em] border-[black]"
         >
           <div className="flex w-full h-full gap-[28px] lg:gap-[48px] px-2 lg:px-8 lg:flex-row flex-col items-center lg:justify-evenly justify-center lg:ml-4 lg:mr-4 relative">
-            <div className="w-full mt-0 lg:flex lg:justify-center lg:px-[5px]">
-              <select
-                value={ubicacionElegida}
-                onChange={(e: any) => setUbicacionElegida(e.target.value)}
-                className="card-select inline-block text-2xl lg:text-base"
-              >
-                <option value="" selected>
-                  Ubicación
-                </option>
-                {ubicacion.map((ubi, index) => (
-                  <option key={index} value={ubi.nombre}>
-                    {ubi.nombre}
-                  </option>
-                ))}
-              </select>
-            </div>
             <div className="w-full mt-0">
               <select
                 value={categoriaElegida}

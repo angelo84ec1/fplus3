@@ -58,11 +58,11 @@ const Marca = ({ marca }: props) => {
     <div
       data-aos="flip-down"
       data-aos-delay="100"
-      className="lg:w-1/3 sm:w-2/4 w-full py-0 lg:px-6 md:px-2 px-10 mb-16 lg:aspect-[9/11] h-auto max-h-[450px]"
+      className="lg:w-1/3 sm:w-2/4 w-full py-0 lg:px-6 md:px-2 px-10 mb-16 lg:aspect-[9/11] h-auto flex flex-col"
       data-category={marca.categoria.nombre}
     >
       <div
-        className="overflow-hidden h-100 flex flex-col justify-between bg-white border"
+        className="overflow-hidden flex-1 flex flex-col justify-between bg-white border"
         style={{
           borderRadius: "1.5em",
           boxShadow: "0.125em 1.5em 1.25em 0 rgba(0, 0, 0, 0.388)",
@@ -128,7 +128,7 @@ const Marca = ({ marca }: props) => {
             />
           </div>
         </div>
-        <div className="py-4 px-6">
+        <div className="py-4 px-6 flex-1 overflow-hidden">
           <div className="col-8 col-md-7 d-inline-block">
             <Link
               className="text-black no-underline hover:underline font-bold"
@@ -156,7 +156,7 @@ const Marca = ({ marca }: props) => {
           </div>
           <p
             style={{ fontFamily: "Mukata Mahee Regular" }}
-            className="card-text text-[#0d132f] tipo-letra cuerpo-card leading-none mt-4 text-sm"
+            className="card-text text-[#0d132f] tipo-letra cuerpo-card leading-none mt-4 text-sm line-clamp-3 overflow-hidden"
           >
             {marca.descripcion}
           </p>
@@ -176,7 +176,7 @@ const Marca = ({ marca }: props) => {
               <div className="d-flex justify-content-end">
               <button
   type="button"
-  className="text-base font-semibold text-white bg-[#00c6d5] px-3 py-3 rounded-lg 
+  className="text-base font-semibold text-white bg-[#00c6d5] px-2 py-3 rounded-lg 
   shadow-[0_8px_16px_rgba(0,198,213,0.4),0_4px_8px_rgba(0,0,0,0.2)] 
   hover:px-4
   hover:py-3

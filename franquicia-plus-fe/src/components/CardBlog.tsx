@@ -37,7 +37,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
                     <div className="h-24">
                     <button
                         type="button"
-                        className={`text-white ${buttonClass} bg-[#0d132f] px-1 rounded-lg mb-2`}
+                        className={`text-white ${buttonClass} bg-[#00c6d5] px-3 py-2 rounded-lg mb-2`}
                     >
                         {buttonText}
                     </button>

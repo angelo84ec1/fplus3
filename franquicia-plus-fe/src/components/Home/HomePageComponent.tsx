@@ -17,7 +17,6 @@ import HomeCarouselPhone from "@/components/Home/HomeCarouselPhone";
 import HomeCarouselPc from "@/components/Home/HomeCarouselPc";
 import RecommendedCategories from "@/components/Home/RecommendedCategories";
 import BlogsHome from "@/components/Home/BlogsHome";
-import PublicityComponent from "@/components/PublicityComponent";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Marcas } from "@/types/Marcas";
@@ -221,26 +220,7 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
           </section>
         )}
 
-        {/* Sección de video - 100% horizontal, sin espacios */}
-        <section className="w-full leading-none">
-          <a
-            href="https://experiencia.escala.com/escala-franquiciaplus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full leading-none"
-          >
-            <video
-              className="w-full h-auto object-contain block bg-white m-0 leading-none"
-              loop
-              autoPlay
-              preload="auto"
-              muted
-              playsInline
-            >
-              <source type="video/mp4" src="/video.mp4" />
-            </video>
-          </a>
-        </section>
+     
 
         {/* Sección de nuevas franquicias */}
         <section className="text-white pt-12 lg:pt-16 pb-12 lg:pb-16 flex justify-center gradientHomeBg w-full">
@@ -295,11 +275,6 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
         {/* Blogs */}
         <section>
           <BlogsHome />
-        </section>
-        
-        {/* Publicidad */}
-        <section>
-          <PublicityComponent />
         </section>
         
         {/* Footer */}

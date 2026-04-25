@@ -149,7 +149,7 @@ const AboutUsComponent = () => {
                 style={{ fontFamily: "Mukata Mahee Bold" }}
                 className="bg-[#02C5D5] px-8 py-4 text-2xl"
               >
-                “Franquicia Plus,
+                “FPlus Global,
                 <br />
                 Negocios que funcionan”
               </div>

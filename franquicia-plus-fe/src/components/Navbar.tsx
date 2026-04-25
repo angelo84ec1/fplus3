@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import logo from "@/assets/img-franquicias/Logo-1.png";
-import { TbWorld } from "react-icons/tb";
-import { IoIosArrowDown } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import logoSimple from "@/assets/img-franquicias/Group -71.png";
 import {
@@ -75,36 +73,6 @@ const Navbar = () => {
               </div>
             </a>
 
-            <div className="lg:flex hidden gap-8 items-center">
-              <TbWorld className="text-xl text-[#02c5d5]" />
-              <div className="relative w-10">
-                <select
-                  defaultValue={1}
-                  className="border-none bg-transparent cursor-pointer select-noArrow w-full text-[#9F9C9D]"
-                >
-                  <option value="1">ES</option>
-                  <option value="2">EN</option>
-                </select>
-                <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none text-sm">
-                  <IoIosArrowDown className="text-[#02c5d5]" />
-                </div>
-              </div>
-              <div className="relative w-10">
-                <select
-                  defaultValue={1}
-                  className="border-none bg-transparent cursor-pointer w-full select-noArrow text-[#9F9C9D]"
-                >
-                  <option value="1">EC</option>
-                  <option value="2">PE</option>
-                  <option value="3">PR</option>
-                  <option value="4">MX</option>
-                  <option value="5">USA</option>
-                </select>
-                <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none text-sm">
-                  <IoIosArrowDown className="text-[#02c5d5]" />
-                </div>
-              </div>
-            </div>
           </div>
           <div>
             <div
