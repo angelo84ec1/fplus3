@@ -24,7 +24,6 @@ export default function BannerHome({ onChangeTipo }: any) {
   const [ubicacionElegida] = useState<string>("Ecuador");
   const [categoriaElegida, setCategoriaElegida] = useState<string>("");
   const [inversionElegida, setInversionElegida] = useState<string>("");
-  const [tipo, setTipo] = useState<string>("");
 
   useEffect(() => {
     getCategoria();
@@ -91,17 +90,6 @@ export default function BannerHome({ onChangeTipo }: any) {
     }`;
 
     router.push(targetUrl);
-  };
-
-  const TIPO_CHOICES = [
-    { text: <strong>NEGOCIOS</strong>, code: "Business" },
-    { text: <strong>FRANQUICIAS</strong>, code: "Franchise" },
-  ];
-
-  const changeTipo = (event: any) => {
-    console.log(event.target.value);
-    setTipo(event.target.value);
-    onChangeTipo(event.target.value);
   };
 
   return (
@@ -271,7 +259,7 @@ export default function BannerHome({ onChangeTipo }: any) {
         <div
           id="searchBox"
           style={{ boxShadow: "0.125em 1.5em 1.25em 0 #00000063" }}
-          className="absolute w-[80%] h-[18em] lg:w-[60em] lg:h-[6em] top-[450px] lg:top-[480px] lg:bottom-0 -bottom-32 z-[2] bg-white mx-auto my-0 p-[5px] rounded-[1.5719em] border-[black]"
+          className="absolute w-[80%] h-[14em] lg:w-[60em] lg:h-[6em] top-[450px] lg:top-[480px] lg:bottom-0 -bottom-20 z-[2] bg-white mx-auto my-0 p-[5px] rounded-[1.5719em] border-[black]"
         >
           <div className="flex w-full h-full gap-[28px] lg:gap-[48px] px-2 lg:px-8 lg:flex-row flex-col items-center lg:justify-evenly justify-center lg:ml-4 lg:mr-4 relative">
             <div className="w-full mt-0">
@@ -307,28 +295,6 @@ export default function BannerHome({ onChangeTipo }: any) {
               </select>
             </div>
 
-            <div className="w-full mt-0 absolute lg:-top-13 -top-16 -left-5 flex md:justify-start justify-between gap-2">
-              {TIPO_CHOICES.map((item, index) => (
-                <label
-                  key={index}
-                  className={`text-xl md:text-2xl lg:text-base md:px-3 px-6 py-[6px] rounded-lg border border-gray-200 cursor-pointer transition-colors duration-300 text-center w-1/2 min-w-[58%] md:w-auto md:min-w-0 ${
-                    tipo === item.code ? "bg-[#29bdd3] text-white" : "bg-white"
-                  } hover:bg-[#29bdd3]/80 hover:text-white`}
-                >
-                  <input
-                    type="radio"
-                    name="tipo"
-                    id={`${index}`}
-                    value={item.code}
-                    onChange={changeTipo}
-                    className="hidden"
-                  />
-                  {item.text}
-                </label>
-              ))}
-            </div>
-
-
             <div className="w-full h-[2.125em] lg:h-full flex items-center justify-center mt-4 lg:mt-0">
               <button
                 type="button"
@@ -336,8 +302,7 @@ export default function BannerHome({ onChangeTipo }: any) {
                   filtroBuscar(
                     categoriaElegida,
                     ubicacionElegida,
-                    inversionElegida,
-                    tipo
+                    inversionElegida
                   )
                 }
                 style={{ fontFamily: "Mukata Mahee Regular" }}

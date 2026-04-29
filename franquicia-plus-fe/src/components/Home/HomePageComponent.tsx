@@ -171,38 +171,6 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
               {/* Categorías y marcas */}
               <div className="w-full flex justify-center">
                 <div className="w-full lg:w-full">
-                  {/* Tabs de categorías */}
-                  <div className="border-b mb-6">
-                    <ul className="flex justify-center gap-2 flex-wrap">
-                      {categories.map((category) => (
-                        <li
-                          onChange={() => handleCategoryChange(category.value)}
-                          key={category.id}
-                          className={`${
-                            selectedCategory === category.value
-                              ? "text-[#CC4B3D]"
-                              : "text-[#0d132f]"
-                          } opcion flex hover:text-[#CC4B3D] cursor-pointer`}
-                        >
-                          <label
-                            className="border-0 text-xs sm:text-sm lg:text-base px-3 lg:px-10 py-2 gap-1 flex justify-center items-center cursor-pointer"
-                            htmlFor={category.id}
-                          >
-                            <FontAwesomeIcon icon={category.icon} className="text-sm lg:text-base" />
-                            <span className="whitespace-nowrap">{category.value}</span>
-                          </label>
-                          <input
-                            id={category.id}
-                            type="radio"
-                            name="categories"
-                            value={category.value}
-                            className="categoriesHome"
-                          />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
                   {/* Grid de marcas */}
                   <div className="flex flex-wrap mb-8 lg:mb-12">
                     {popularBrands.results.map((marca, index) => {
@@ -223,7 +191,7 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
      
 
         {/* Sección de nuevas franquicias */}
-        <section className="text-white pt-12 lg:pt-16 pb-12 lg:pb-16 flex justify-center gradientHomeBg w-full">
+        {/* <section className="text-white pt-12 lg:pt-16 pb-12 lg:pb-16 flex justify-center gradientHomeBg w-full">
           <div className="sm:max-w-[540px] md:max-w-[1100px] lg:max-w-[1800px] xl:max-w-[1300px] 2xl:max-w-[1200px] w-full flex items-center flex-col px-4">
             <div className="flex flex-col mb-8 lg:mb-12 text-center gap-3 lg:gap-2">
               <div
@@ -255,7 +223,7 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
               </button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonios */}
         <section>
@@ -268,9 +236,9 @@ const HomePageComponent = ({ popBrands, Brands }: props) => {
         </section>
         
         {/* Categorías recomendadas */}
-        <section>
+        {/* <section>
           <RecommendedCategories />
-        </section>
+        </section> */}
         
         {/* Blogs */}
         <section>
